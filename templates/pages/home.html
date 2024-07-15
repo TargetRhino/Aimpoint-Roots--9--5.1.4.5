@@ -1,0 +1,413 @@
+---
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
+
+{{assignVar "linkBanner" "https://aimpoint.us/le-military-discount-thank-you#step2"}}
+
+{{#if (occurrences 'Verified B2G Agency, Verified IOP, IOP' customer.customer_group_name) '>' 0}}
+    {{assignVar "linkBanner" "https://aimpoint.us/shop-products/iop-b2g-exclusives/"}}
+{{else}}
+    {{assignVar "linkBanner" "https://aimpoint.us/product-selection-tool/?_bc_fsnf=1&Special=Special"}}
+{{/if}}
+
+
+{{#partial "hero"}}
+
+    {{#if banners.top}}
+
+    <div class="banners" data-banner-location="top">
+        {{#each (limit banners.top_metadata 1)}}
+        <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+            <div data-event-type="promotion-click">
+                {{{this.content}}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    {{{snippet 'home_content'}}}
+
+    {{{region name="home_below_carousel"}}}
+
+{{/partial}}
+
+{{#partial "page"}}
+    {{#each shipping_messages}}
+        {{> components/common/alert/alert-info message}}
+    {{/each}}
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+    
+    <div id="slider_desktop" class="swiffy-slider slider-item-show2-sm slider-nav-visible slider-nav-autohide slider-item-first-visible slider-nav-autoplay slider-nav-autopause  slider-indicators-dark slider-indicators-sm" data-slider-nav-autoplay-interval="10000">
+        <ul class="slider-container" id="sliderBannersDesktop">
+            
+            
+        </ul>
+    
+        <button type="button" class="slider-nav"></button>
+        <button type="button" class="slider-nav slider-nav-next"></button>
+    
+        <div class="slider-indicators" id="buttonsBannersDesktop">
+            
+            
+        </div>
+    </div>
+
+
+    <div id="slider_mobile" class="swiffy-slider slider-item-show2-sm slider-nav-visible slider-nav-autohide slider-item-first-visible slider-nav-autoplay slider-nav-autopause slider-indicators-dark slider-indicators-outside slider-indicators-sm" data-slider-nav-autoplay-interval="10000">
+        <ul class="slider-container" id="sliderBannersMobile">
+            
+
+            
+        </ul>
+    
+        <button type="button" class="slider-nav"></button>
+        <button type="button" class="slider-nav slider-nav-next"></button>
+    
+        <div class="slider-indicators" id="buttonsBannersMobile">
+            
+        </div>
+    </div>
+
+
+    
+
+      
+
+    <div class="main full grid-bg">
+        
+        <div class="container-fluid" id="home-ribbon">
+            {{#if (occurrences 'Verified B2G Agency' customer.customer_group_name) '>' 0}}
+            <div class="row justify-content-center blackbackground {{#if (occurrences 'Verified B2G Agency' customer.customer_group_name) '>' 0}}redbackground{{/if}}">
+                <div class="col-8 blackbackground center home_div {{#if (occurrences 'Verified B2G Agency' customer.customer_group_name) '>' 0}}redbackground{{/if}}">
+                    <h3>
+                        {{#if (occurrences 'Verified B2G Agency' customer.customer_group_name) '>' 0}}
+                            <a href="https://aimpoint.us/aimpoint-professional-customers-verified">[ {{lang 'home.seo_text_verified'}} ]</a>
+                        {{else}}
+                        [<a href="https://aimpoint.us/rewards"> {{lang 'home.seo_text_guest'}} </a>]
+                        {{/if}}
+                    </h3>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+
+        <div class="container categories" id="categories">
+            <div class="row">
+                <div class="col-12 col-md-4 center">
+                    <a class="toptap" href="/shop-products/new-releases"> 
+                        <img class="ftrdimg" src="https://cdn11.bigcommerce.com/s-botjf27kl5/product_images/uploaded_images/newreleasesrev-p-2.png?t=1632764469" alt="new releases p-2" />
+                        <h2>
+                            New Releases
+                        </h2>
+                    </a>
+                    
+                </div>
+              
+                <div class="col-12 col-md-4 center">
+                    <a class="toptap" href="/shop-products/red-dot-sights/">
+                        <img class="ftrdimg" src="https://cdn11.bigcommerce.com/s-botjf27kl5/product_images/uploaded_images/gt2.jpg?t=1625834619" alt="Aimpoint red dot sights" />
+                        <h2>
+                            Red Dot Sights
+                        </h2>
+                    </a>
+                    
+                </div>
+              
+                <div class="col-12 col-md-4 center">
+                    <a class="toptap" href="/shop-products/magnifiers/">
+                        <img class="ftrdimg" src="https://cdn11.bigcommerce.com/s-botjf27kl5/product_images/uploaded_images/gt3.jpg?t=1625834619" alt="Aimpoint magnifiers" />
+                        <h2>
+                            Magnifiers
+                        </h2>
+                    </a>
+                    
+                </div>
+             
+                <div class="col-12 col-md-4 center">
+                    <a class="toptap" href="/shop-products/accessories/">
+                        <img class="ftrdimg" src="https://cdn11.bigcommerce.com/s-botjf27kl5/product_images/uploaded_images/gt4.jpg?t=1625834619" alt="Aimpoint accessories" />
+                        <h2>
+                            Parts &amp; Accessories
+                        </h2>
+                    </a>
+                    
+                </div>
+
+                <div class="col-12 col-md-4 center" >
+                    <a class="toptap" href="/shop-products/aimpoint-gear/">
+                        <img class="ftrdimg" src="https://cdn11.bigcommerce.com/s-botjf27kl5/product_images/uploaded_images/gt5.jpg?t=1625834619" alt="Aimpoint official gear" />
+                        <h2>
+                            Aimpoint Gear
+                        </h2>
+                    </a>
+                    
+                </div>
+             
+                <div class="col-12 col-md-4 center">
+                    <a class="toptap" href="/product-selection-tool/">
+                        <img class="ftrdimg" src="https://cdn11.bigcommerce.com/s-botjf27kl5/product_images/uploaded_images/gt6.jpg?t=1625834619" alt="Product selection tool" />
+                        <h2>
+                            Product Selection Tool
+                        </h2>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+        
+
+        
+
+
+        <div class="container" id="featured">
+            
+                {{#if products.featured}}
+                    {{> pages/custom/templates/components/products/featured-new products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+                {{/if}}
+                {{{region name="home_below_featured_products"}}}
+            
+        </div>
+
+        <div class="container center" id="seo_module">
+            <div class="row">
+
+                <div class="col-12 col-md-6">
+                    <h1 >Welcome to</h1>
+                    <h2>Aimpoint</h2><p>When you purchase directly from Aimpoint, you know you are getting authentic products directly from the manufacturer. You will also find unique products and packages not available anywhere else, and shop the world&rsquo;s best selection of Aimpoint parts, accessories, and logo gear.</p>
+                    <p>Not certain which sight is right for you? Use our online product selection tools to narrow your choice, and also take a moment to connect with Aimpoint to ensure that you are among the first to receive the latest information regarding new products, company news, and discounts.</p>
+                    <p>Thanks for visiting, and please tell us any way that we can improve to meet your needs more effectively.</p>
+                    <h3>The Aimpoint Team</h3></div>
+                    <div class="col-12 col-md-6">
+                        </div>
+                <div class="col-12">
+                <hr>
+            </div></div>
+        </div>
+
+        <div class="container" id="divOptionsStore">
+            <div class="row">
+        
+
+                <div class="col-12 col-md-4 center info_home">
+                    <p>
+                        <a href="/shipping-delivery/"><img src="https://cdn11.bigcommerce.com/s-botjf27kl5/product_images/uploaded_images/b-re-1.jpg?t=1626116391" alt="Free shipping information" width="130" loading="lazy" />
+                        <h2><strong>FREE SHIPPING</strong></h2></a>
+                    </p>
+                    <p>Free shipping for <br />orders over $50.00</p>
+                    
+                    
+                </div>
+                    
+                    
+                    
+                    <!-- Brand store-->
+                    <div class="col-12 col-md-4 center info_home">
+                        <p>
+                            <a href="/product-selection-tool/">
+                            <img src="https://cdn11.bigcommerce.com/s-botjf27kl5/product_images/uploaded_images/b-red-2.jpg?t=1626116391" alt="Aimpoint US store information" width="130" loading="lazy"/><br>
+                            <h2"><strong>BRAND STORE</strong></h2></a>
+                        </p>
+                    <p>The Aimpoint Brand store <br />is open 24/7</p>
+                    </div>
+                    
+                    
+                    
+                    <!-- Signup-->
+                    <div class="col-12 col-md-4 center info_home">
+                        <p>
+                            <a href="/connect-with-aimpoint/">
+                            <img src="https://cdn11.bigcommerce.com/s-botjf27kl5/product_images/uploaded_images/b-red-3.jpg?t=1626116392" alt="Aimpoint US newsletter" width="130" loading="lazy"/>
+                            <h2><strong>NEWSLETTER</strong></h2>
+                        </a>
+                        </p>
+                    <p>Signup for Aimpoint's newsletter <br />to stay up to date</strong></p>
+                    </div>
+        
+            </div>
+        </div>
+
+        
+    </div>
+{{/partial}}
+
+
+{{#partial "hero-bottom"}}
+    {{#if blog.recent_posts}}
+        <div class="banners blog-posts-wrap">
+            <div class="container">
+                <h2 class="page-heading">News &amp; Updates</h2> 
+                <div class="blog-posts">
+
+                    <div class="col-md-2 vertical-bottom align-self-bottom">
+                        <div class="align-self-end main-home-news">
+                            <h3>News & Updates</h3>
+                            <p>Aimpoint News & Updates will report from around the U.S. on training tips, product development, and important information for hunters, sport shooters, and professional end users. Stay up to date with the worldwide leader in red dot sight technology right here at Aimpoint News & Updates.</p>
+                            <br>
+                            <button data-v-d9f064fe="" role="button" class="base-button primary black !w-full sm:!w-auto" tabindex="-1">
+                                <span data-v-d9f064fe="" class="top-line primary"></span>
+                                <span data-v-d9f064fe="" class="background-top"></span>
+                                <span data-v-d9f064fe="" class="button-inner">
+                                    <p data-v-d9f064fe="" class="text-h4">All Articles</p>
+                                    <div data-v-d9f064fe="" class="relative w-4 h-4">
+                                        <span data-v-d9f064fe="" class="nuxt-icon nuxt-icon--fill absolute inset-0 icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" viewBox="0 0 24 24">
+                                                <path fill="currentColor" fill-rule="evenodd" d="m15.0001 5.29297 6.7071 6.70713-6.7071 6.7071-.7071-.7071 6-6-6-6.00002.7071-.70711Z" clip-rule="evenodd"></path>
+                                                <path fill="currentColor" fill-rule="evenodd" d="M2.5 11.5h18v1h-18v-1Z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </span>
+                                <span data-v-d9f064fe="" class="background-bottom"></span>
+                                <span data-v-d9f064fe="" class="bottom-line primary"></span>
+                                <a data-v-d9f064fe="" href="/news-updates/" target="_blank" rel="noopener noreferrer" aria-label="All Articles" class="absolute inset-0 z-20 w-full h-full" ></a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                    {{#each blog.recent_posts}}
+                        
+                            {{> pages/custom/templates/components/blog/post-new  post=this}}
+                        
+                    {{/each}}
+                </div>
+            </div>
+            <div class="container center">
+                <div class="row justify-content-center"><div class="col-3 align-self-center">
+                    
+
+                </div></div>
+            </div>
+        </div>
+
+        <div id="popupSales">
+            Enter now for a chance to win a <br><a href="https://aimpoint.us/promotions/2024/memorial_day"><strong>FREE DUTY RDS</strong></a>
+            
+            <div id="close_btn_div"><a href="#" id="close_btn_noti"><img src = "{{cdn '/assets/img/svg-close-btn-black-1.svg'}}" class="icon-payment"></a></div>
+            
+        </div>
+
+        <style>
+            
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                const today = new Date();
+                const limit = new Date("2024-05-31");
+                
+                var setCook = Cookies.get('memorial_day_2024');
+                //alert(setCook);
+                if(today<limit && setCook!="true"){
+                    var div = $("#popupSales");
+                    div.show( "fadeIn");
+                    div.animate({right: '0px'}, "slow");
+                    
+
+                    $("#close_btn_noti").click(function(){
+                        //div.animate({right: '-350px'}, "slow");
+                        Cookies.set('memorial_day_2024', 'true', { expires: 7 })
+
+                        $("#popupSales").fadeOut();
+                        return false;
+                    });
+                }
+            });
+        </script>
+    {{/if}}
+
+    {{{region name="home_below_new_products"}}}
+{{/partial}}
+
+{{> pages/custom/templates/layout/base-new}}
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        
+        function haveWords(phrase, word) {
+            if(phrase!='' && word!=''){
+                //console.log("++"+phrase+"---"+word);
+                return phrase.toLowerCase().includes(word.toLowerCase());
+            }else{
+                return false;
+            }
+        }
+        function haveNoWords(phrase, word) {
+            if(phrase!=''){
+                //console.log("++"+phrase+"---"+word);
+                return phrase.toLowerCase().includes(word.toLowerCase());
+            }else{
+                return true;
+            }
+        }
+        
+        var urlJson = 'https://aimpoint-banners-b2c.s3.amazonaws.com/banners.json?'+Date.now();
+        $.getJSON(urlJson, function(data) {
+            var profileSite="{{customer.customer_group_name}}";
+            if(profileSite=='')
+                profileSite='Guest';
+                
+
+            $.each(data, function(index, item) {
+                var showBanner = false;
+                if(item.hide==''){
+                    showBanner = true;
+                }else{
+                    if(!(haveWords(item.hide, profileSite))){
+                        showBanner = true;
+                    }
+                }
+                if(showBanner){
+                    if(item.show==''){
+                        showBanner = true;
+                    }else{
+                        if(haveWords(item.show, profileSite)){
+                            showBanner = true;
+                        }
+                    }
+                } 
+
+                if(showBanner){
+                    if(item.type=="Desktop"){
+                        $("#sliderBannersDesktop").append('<li><a href="'+item.urlbutton+'"><img src="'+item.imageUrl+'"></a></li>');
+                        $("#buttonsBannersDesktop").append("<button></button>");
+                    }
+                    if(item.type=="Mobile"){
+                        if(haveWords(item.show, "Guest") || item.show=="" || haveWords(item.show, profileSite)){
+                            $("#sliderBannersMobile").append('<li><a href="'+item.urlbutton+'"><img src="'+item.imageUrl+'"></a></li>');
+                            $("#buttonsBannersMobile").append("<button></button>");
+                        }
+                    }
+                }
+                
+                
+               // console.log(item.imageUrl);
+                //window.swiffyslider.init();
+                //$('#banner-list').append('<li>' + item.name + '</li>');
+            });
+            window.swiffyslider.init();
+        }).fail(function(jqxhr, textStatus, error) {
+            var err = textStatus + ', ' + error;
+            console.error('Request Failed: ' + err);
+        });
+    });
+
+</script>

@@ -1,0 +1,128 @@
+
+.mySlidesCustom {
+    display: none;
+  }
+  
+  /* The dotCustoms/bullets/indicators */
+  .dotCustom {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #999999;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .activeCustom,
+  .dotCustom:hover {
+    background-color: #111111;
+  }
+  
+  /* Fading animation */
+  .fadeCustom {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  .responsive {
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  .mobile-display{display:none}
+  .desktop-display{display:block}
+  @media (max-width:800px){
+    .desktop-display {display:none}
+    .mobile-display {display:block}
+    .productView-options .form-action .button.button--primary{
+      width: calc(100% - 63px);
+    }
+  }
+  .icon svg{
+    color: white;
+    fill: white;
+  }
+  
+  
+  
+  /* Carousel Image CSS: The dots/bullets/indicators */
+  .dot-slide {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .dot-slide-mobile {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active-slide {
+    background-color: #717171;
+  }
+  .active-slide-mobile {
+    background-color: #717171;
+  }
+  .dot-slides {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .dot-slide-mobiles {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active-slides {
+    background-color: #717171;
+  }
+  .active-slide-mobiles {
+    background-color: #717171;
+  } 
+  /* Fading animation */
+  .fade-slide {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+   /* Fading animation */
+   .fade-slide-mobile {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+
+  .slider-indicators .active{
+    background-color: #32e8e5;
+  }
+
+  

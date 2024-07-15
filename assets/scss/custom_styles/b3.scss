@@ -1,0 +1,376 @@
+
+  .agency-font {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size:14px!important;
+    color:#fff!important;
+    margin-top:20px;
+    margin-bottom:0;
+    padding-left:18px
+  }
+  .agency-font-mh {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size:14px!important;
+    color:#fff!important;
+    margin-top:14px;
+    margin-bottom:0;
+    padding-left:18px
+  }
+  .block-b2g {
+    height:100px;
+    background-color:#000;
+    color:#fff;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center
+  }
+  .block-b2g-find {
+    height:200px;
+    background-color:#000;
+    color:#fff;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -ms-flex-direction:column;
+    flex-direction:column
+  }
+
+
+
+// Adds accordion styling 
+
+
+
+.b2b-font{
+    font-family:  'Montserrat', sans-serif !important;
+    font-size: 16px !important;
+    color: white !important;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding-left: 18px;
+}
+
+.b2b-font-mh{
+    font-family:  'Montserrat', sans-serif !important;
+    font-size: 16px !important;
+    color: white !important;
+    margin-top: 14px;
+    margin-bottom: 0px;
+    padding-left: 18px;
+}
+
+    .block-b2g {
+        height: 100px;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .block-b2g-find {
+        height: 200px;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    // .block h1 {
+    //     font-weight: bold;
+    // }
+    .image-b2g {
+        height: 700px;
+        background-image: url("https://i.shgcdn.com/1cfd9731-ae25-4806-8b5b-7fa299d2caf9/-/format/auto/-/preview/3000x3000/-/quality/lighter/");
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+
+    .b2b{
+        padding-top: 50px;
+    }
+    .b2b-p{
+        padding-top: 25px;
+    }
+
+    .whitespace {
+        height: 400px;
+    }
+    
+    .block-b2b-ipad {
+        height: 100px;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .block-b2b-mobile {
+        height: 100px;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-b2b-mobile {
+        height: 400px;
+        background-image:
+            url("https://cdn11.bigcommerce.com/s-botjf27kl5/images/stencil/original/image-manager/b2b-mobile-hero-img.png?t=1678460052&_gl=1*15fiqku*_ga*OTI5NjgwNjU0LjE2NzI5NDY3OTU.*_ga_WS2VZYPC6G*MTY3ODQ1OTM1MS4xNDkuMS4xNjc4NDYwMDczLjQ4LjAuMA..");
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+
+    
+
+    .b2b-font-ipad {
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 16px !important;
+        color: white !important;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        padding-left: 0px;
+    }
+
+    .b2b-font-mh-ipad {
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 16px !important;
+        color: rgb(255, 255, 255) !important;
+        margin-top: 14px;
+        margin-bottom: 0px;
+        padding-left: 18px;
+    }
+
+    ul.accordion-b2b-ipad {
+        margin: 0;
+    }
+// END ACCORDION STYLING
+
+
+
+
+
+
+
+// BEGIN CONTACT BOX STYLING
+
+.aim-subheader {
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    }
+    
+    .aim-contactbox {
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    padding-left: 3px;
+    }
+    
+    @media only screen and (max-width: 800px) {
+       .columnx2 {
+          width: 100%;
+       }
+       .column3 {
+          width: 100%;
+       }
+       .sidesection {
+          width: 100%;
+       }
+       .aim-container {
+          width: 100%;;
+       }
+       .column20 {
+          width: 100%;
+       }
+       .column40 {
+          width: 100%;
+       }
+    }
+    
+    .aim-container {
+       color: #000000;
+       background-color: #e5e5e5;
+       display: flex;
+       justify-content: center;
+       font-size: 17px;
+       line-height: 1.5em;
+       padding: 0px 12%;
+    }
+    
+    .aim-container a {
+       color: #d0202c;
+    }
+    
+    .columnx2 {
+       float: left;
+       width: 50%;
+       padding: 15px 25px;
+    }
+    
+    .columnx4 {
+       float: left;
+       width: 25%;
+       padding: 15px 25px;
+    }
+    
+    @media only screen and (max-width: 767px) {
+       .desktoponly {
+          display: none;
+       }
+    }
+    
+    @media screen and (min-width: 767px) {
+       .mobileonly {
+          display: none;
+       }
+    }
+    // END CONTACT BOX STYLING
+    .h1_title_mobile{
+        color: white !important; 
+        font-size: 20px !important;
+}
+.h1_title_laptop{
+        color: white !important; font-size: 48px !important;
+}
+
+.h1_title_sales{
+    color: white !important; font-size: 30px !important;
+}
+.h1_title_agency{
+    color: #000000 !important; font-size: 25px !important;
+}
+
+.page--category-page h1{
+    font-size: 40px;
+    text-align: center;
+}
+
+
+
+
+.agency-font-faq {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px !important;
+    color: white !important;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding-left: 18px;
+}
+
+.agency-font-mh-faq {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px !important;
+    color: rgb(0, 0, 0) !important;
+    margin-top: 14px;
+    margin-bottom: 0px;
+    padding-left: 18px;
+}
+
+
+
+.agency-font-ipad {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px !important;
+    color: white !important;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+
+.agency-font-mh-ipad {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px !important;
+    color: rgb(255, 255, 255) !important;
+    margin-top: 14px;
+    margin-bottom: 0px;
+    padding-left: 18px;
+}
+
+
+
+.b2g-button {
+margin-top: 20px;
+border: 3px solid #ffffff;
+padding: 8px 30px;
+font-family: 'Montserrat', sans-serif!important;
+font-weight: 800;
+color: #ffffff;
+font-size: 14px;
+text-transform: uppercase;
+transition: all .3s cubic-bezier(.25, .8, .25, 1);
+background: #cd171a;
+}
+
+
+
+.cart-additionalCheckoutButtons .CheckoutButton{
+    margin-bottom: 20px!important;
+}
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      /* 16:9 aspect ratio (change this if your video has a different aspect ratio) */
+      height: 0;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+//iPhone SE to iPhone 12 PRO
+@media only screen and (max-width: 550px) and (min-width: 431px)  {
+      .apple-pay-checkout-button {
+        //   padding-top: 2px !important;
+          width: 400px !important;
+          margin-top: 155px !important;
+          position: absolute !important;
+          
+      }
+}
+//iPhone watch and small devices
+@media only screen and (max-width: 320px) and (min-width: 100px)  {
+      .apple-pay-checkout-button {
+        //   padding-top: 2px !important;
+          width: 400px !important;
+          margin-top: 145px !important;
+          position: absolute !important;
+          
+      }
+}
+
+//376-414
+@media only screen and (max-width: 414px) and (min-width: 376px)  {
+      .apple-pay-checkout-button {
+        //   padding-top: 2px !important;
+          width: 400px !important;
+          margin-top: 150px !important;
+          position: absolute !important;
+          
+      }
+}

@@ -1,0 +1,112 @@
+---
+cart: true
+---
+{{inject 'cancelButtonText' (lang 'common.cancel')}}
+{{#partial "page"}}
+{{inject 'invalidEntryMessage' (lang 'cart.invalid_entry_message')}}
+<div class="page cartpage">
+    <div class="container">
+        <div class="back-the-blue">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>Enjoy 25% off rifle-compatible  <a href="https://aimpoint.us/shop-products/mounts-spacers/?_bc_fsnf=1&Series=ACRO%C2%AE&Gun+Type=AR-15%2FMSR" target="_blank"><font style="color: red"><u>Mounts, Spacers</u></font></a> and <a href="https://aimpoint.us/shop-products/accessories/?_bc_fsnf=1&Series=ACRO%C2%AE" target="_blank"><font style="color: red"><u>Accessories</u></font></a>  with your purchase of an Acro P-2™. No coupon needed—the discount will apply automatically 
+            </strong> 
+           </div>
+<!--
+           <div id="popupSalesCart" style="display: none;">
+            Enter now for a chance to win a <a href="https://aimpoint.us/promotions/2024/memorial_day"><strong>FREE DUTY RDS</strong></a>
+            
+        </div>
+-->
+        <main class="page-content" data-cart>
+            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+
+    
+
+            {{> components/cart/page-title}}
+    
+            <div data-cart-status>
+                {{> components/cart/status-messages}}
+            </div>
+    
+            {{#if cart.items.length}}
+                <div class="loadingOverlay"></div>
+    
+                <div data-cart-content>
+                    
+                    {{> components/cart/content}}
+                </div>
+
+                <div data-cart-totals>
+                    {{> components/cart/totals}}
+                </div>
+
+                {{#if cart.show_primary_checkout_button}}
+
+                    <div class="cart-actions">
+                        <div class="col-5" style="float: right;">
+                        <button data-v-d9f064fe="" role="button" class="base-button-red primary black whiteBlack !w-full" tabindex="-1">
+                            <span data-v-d9f064fe="" class="top-line primary"></span>
+                            <span data-v-d9f064fe="" class="background-top"></span>
+                            <span data-v-d9f064fe="" class="button-inner">
+                                <p data-v-d9f064fe="" class="text-h4">{{lang 'cart.checkout.button'}}</p>
+                                <div data-v-d9f064fe="" class="relative w-4 h-4">
+                                    <span data-v-d9f064fe="" class="nuxt-icon nuxt-icon--fill absolute inset-0 icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" viewBox="0 0 24 24">
+                                            <use xlink:href="#icon-cart" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </span>
+                            <span data-v-d9f064fe="" class="background-bottom"></span>
+                            <span data-v-d9f064fe="" class="bottom-line primary"></span>
+                            <a data-v-d9f064fe="" href="{{urls.checkout.single_address}}" target="_blank" rel="noopener noreferrer" aria-label="{{lang 'cart.checkout.button'}}" title="{{lang 'cart.checkout.title'}}" class="absolute inset-0 z-20 w-full h-full"></a>
+                        </button>
+                    </div>
+                        {{#if cart.show_multiple_address_shipping}}
+                            <a class="checkoutMultiple" href="{{urls.checkout.multiple_address}}">
+                                {{lang 'cart.preview.checkout_multiple'}}
+                            </a>
+                        {{/if}}
+                    </div>
+                {{else}}
+
+                    <div class="cart-actions">
+                        <a class="button" href="{{urls.home}}" title="{{lang 'cart.continue_shopping'}}">{{lang 'cart.continue_shopping'}}</a>
+                    </div>
+                {{/if}}
+
+                {{#if cart.additional_checkout_buttons}}
+                    <div class="cart-additionalCheckoutButtons">
+                        {{#each cart.additional_checkout_buttons}}
+                            {{{this}}}
+                        {{/each}}
+                    </div>
+                {{/if}}
+            {{else}}
+                <h3>{{lang 'cart.checkout.empty_cart'}}</h3>
+            {{/if}}
+        </main>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        const today = new Date();
+        const limit = new Date("2024-05-31");
+        
+        var setCook = Cookies.get('memorial_day_2024');
+        //alert(setCook);
+        if(today<limit){
+            var div = $("#popupSalesCart");
+            //div.show();
+            
+        }
+    });
+</script>
+{{/partial}}
+{{> pages/custom/templates/layout/base-new}}

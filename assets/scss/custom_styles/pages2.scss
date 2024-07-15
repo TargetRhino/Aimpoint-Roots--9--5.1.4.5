@@ -1,0 +1,425 @@
+
+
+  .supportbox2134 {
+    background-color:#fff;
+    border:1px solid #eaeaea;
+    font-family:open sans,sans-serif;
+    font-size:16px;
+    line-height:16px;
+    text-align:center;
+    border-radius:1px;
+    padding:20px;
+    -webkit-box-shadow:rgba(0,0,0,.16) 0 1px 4px;
+    box-shadow:rgba(0,0,0,.16) 0 1px 4px;
+    margin:40px 0;
+    -webkit-transition:all .8s cubic-bezier(.25, .8, .25, 1);
+    transition:all .8s cubic-bezier(.25, .8, .25, 1);
+    color:#333
+  }
+  .supportbox2134:hover {
+    background-color:#bd0c0d;
+    color:#fff;
+    -webkit-transition:all .8s cubic-bezier(.25, .8, .25, 1);
+    transition:all .8s cubic-bezier(.25, .8, .25, 1);
+    -webkit-box-shadow:rgba(0,0,0,.1) 0 0 5px 0,rgba(0,0,0,.1) 0 0 1px 0;
+    box-shadow:rgba(0,0,0,.1) 0 0 5px 0,rgba(0,0,0,.1) 0 0 1px 0
+  }
+  .supportbox2134 a:hover {
+    color:#fff
+  }
+  .supportbox2134:hover a {
+    color:#fff
+  }
+
+
+  @media only screen and (max-width:800px) {
+    .columnx2 {
+      width:100%
+    }
+    .column3 {
+      width:100%
+    }
+    .sidesection {
+      width:100%
+    }
+    .aim-container {
+      width:100%
+    }
+    .column20 {
+      width:100%
+    }
+    .column40 {
+      width:100%
+    }
+  }
+  .aim-container {
+    color:#000;
+    background-color:#e5e5e5;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    font-size:17px;
+    line-height:1.5em;
+    padding:0 12%
+  }
+  .aim-container a {
+    color:#d0202c
+  }
+  .columnx2 {
+    float:left;
+    width:50%;
+    padding:15px 25px
+  }
+  .columnx4 {
+    float:left;
+    width:25%;
+    padding:15px 25px
+  }
+
+
+
+
+  .accordion label.accordionitem {
+      line-height: 1.4;
+  }
+  .customForm ul.inputs-list.multi-container>li>label>span {
+     padding-left: 10px;
+  }
+  div.hs-form-field>label>span {
+     font-family:  "Monserrat", sans-serif;
+  }
+  .connectWithAimPt div.hs-form-field>label {
+     float: left;
+  }
+  .connectWithAimPt .hs-error-msg {
+     float: left;
+  }
+  .customForm fieldset {
+     max-width: 100% !important;
+  }
+  .customForm .hs-input:not([type=checkbox]) {
+     font-family: "Monserrat", sans-serif;
+     width: 100%;
+  }
+  .customForm .inputs-list {
+     font-family:  "Monserrat", sans-serif;
+     list-style: none;
+  }
+  input#search_query {
+     font-family:  "Monserrat", sans-serif;
+     font-size: 14px;
+  }
+  .hs-input {
+     padding-left: 7px;
+  }
+  .customForm .hs-error-msgs label {
+     font-family:  "Monserrat", sans-serif;
+  }
+  label.hs-form-checkbox-display {
+     font-family:  "Monserrat", sans-serif;
+  }
+  .hs-button {
+     font-family:  "Monserrat", sans-serif;
+  }
+  .warrantyForm fieldset {
+     max-width: 100% !important;
+  }
+  .warrantyForm .hs_country.hs-country.hs-fieldtype-text.field.hs-form-field {
+     margin-top: 28px;
+  }
+  .customForm .hs-error-msgs label {
+     font-family:  "Monserrat", sans-serif;
+     font-size: 12px;
+     color: #cd1719;
+  }
+  .customForm input.hs-button.primary.large:hover {
+     background: #000;
+     color: #fff;
+     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+  input.hs-button.primary.large {
+     background: #fff;
+     font-size: 1rem;
+     padding: 1.25rem 3.75rem;
+     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+  .exclForm input.hs-button.primary.large {
+     padding: 0.8rem 2.45rem !important;
+  }
+  .customForm legend.hs-field-desc>a[rel="noopener"] {
+     color: #ff0000;
+  }
+  input#zip-3c029054-ee59-4779-a412-4ead6e44ea2f::placeholder,
+  input#zip-1db7b5f6-a028-4f7b-80ba-ac24524464b0::placeholder {
+     font-size: 13px;
+  }
+  @media (max-width: 600px) {
+     .warrantyForm .hs_country.hs-country.hs-fieldtype-text.field.hs-form-field {
+        margin-top: 0px;
+     }
+     
+     .customForm fieldset.form-columns-1 .hs-input:not([type=checkbox]),
+     .customForm .hs-input:not([type=checkbox]) {
+        width: 100% !important;
+     }
+  }
+
+
+
+.card .card-body {
+    font-size: 12px;
+ }
+ 
+ .hubspot-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family:  "Monserrat", sans-serif;
+ }
+ 
+ p.accordion {
+    background-color: #fff;
+    border: 1px solid #eaeaea!important;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: 0;
+    transition: .4s;
+    margin-bottom: 10px;
+    font-family:  "Monserrat", sans-serif;
+    font-size: 14px;
+ }
+ 
+ .accordion-navigation {
+    display: block;
+    margin-bottom: 0;
+    border: solid #fff;
+    border-width: 0px;
+    cursor: pointer;
+ }
+ 
+ .panel {
+    font-size: 15px;
+    line-height: 27.5px;
+ }
+ 
+ .panel li {
+    font-size: 15px;
+    line-height: 27.5px;
+ }
+
+
+ .contactbox {
+    border: 1px solid #eaeaea;
+    padding: 30px;
+    box-shadow: 0 11px 28px -17px rgba(69, 77, 89, .4);
+ }
+
+
+
+
+
+
+
+
+
+
+ .customForm span,
+.customForm input {
+   color: #000;
+}
+.customForm input#birthday-3c029054-ee59-4779-a412-4ead6e44ea2f, .customForm input#birthday-1db7b5f6-a028-4f7b-80ba-ac24524464b0 {
+   float: left;
+   width: 100%;
+   border: 1px solid #e3e3e3;
+   font-size: 14px;
+   min-height: 33px;
+   -webkit-appearance: none !important;
+   -moz-appearance: none;
+   appearance: none;
+}
+.hs_birthday.hs-birthday.hs-fieldtype-date.field.hs-form-field {
+   float: left;
+}
+.accordion label.accordionitem {
+    line-height: 1.4;
+}
+.customForm ul.inputs-list.multi-container>li>label>span {
+   padding-left: 10px;
+}
+div.hs-form-field>label>span {
+   font-family:"Monserrat", sans-serif;
+}
+.connectWithAimPt div.hs-form-field>label {
+   float: left;
+}
+.connectWithAimPt .hs-error-msg {
+   float: left;
+}
+.customForm fieldset {
+   max-width: 100% !important;
+}
+.customForm .hs-input:not([type=checkbox]) {
+   font-family: "Monserrat", sans-serif;
+   width: 100%;
+}
+.customForm .inputs-list {
+   font-family: "Monserrat", sans-serif;
+   list-style: none;
+}
+input#search_query {
+   font-family: "Monserrat", sans-serif;
+   font-size: 14px;
+}
+.hs-input {
+   padding-left: 7px;
+}
+.customForm .hs-error-msgs label {
+   font-family:"Monserrat", sans-serif;
+}
+label.hs-form-checkbox-display {
+   font-family: "Monserrat", sans-serif;
+}
+.hs-button {
+   font-family: "Monserrat", sans-serif;
+}
+.customForm .hs-field-desc {
+   font-family: "Monserrat", sans-serif;
+   font-size: 14px;
+}
+.customForm fieldset.form-columns-1 .hs-input:not([type=checkbox]) {
+   width: 100% !important;
+}
+.customForm input,
+.customForm select,
+.customForm textarea {
+   border: 1px solid #e3e3e3;
+   background: #ffff;
+}
+.customForm ul {
+   margin-left: 0rem;
+   margin-bottom: 0rem;
+   padding: 0rem;
+}
+.customForm .hs-form-field {
+   margin-bottom: 20px;
+}
+.hubspot-form .hs_submit .actions .hs-button {
+   --aimpoint-btn-font-family: "Monserrat", sans-serif;
+}
+.customForm .hs-error-msgs label {
+   font-family: "Monserrat", sans-serif;
+   font-size: 12px;
+   color: #cd1719;
+}
+.warrantyForm fieldset {
+   max-width: 100% !important;
+}
+.warrantyForm .hs_country.hs-country.hs-fieldtype-text.field.hs-form-field {
+   margin-top: 28px;
+}
+.customForm .hs-error-msgs label {
+   font-family: "Monserrat", sans-serif;
+   font-size: 12px;
+   color: #cd1719;
+}
+.customForm input.hs-button.primary.large:hover {
+   background: #000;
+   color: #fff;
+   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+input.hs-button.primary.large {
+   background: #fff;
+   font-size: 1rem;
+   padding: 1.25rem 3.75rem;
+   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.exclForm input.hs-button.primary.large {
+   padding: 0.8rem 2.45rem !important;
+}
+.customForm legend.hs-field-desc>a[rel="noopener"] {
+   color: #ff0000;
+}
+input#zip-3c029054-ee59-4779-a412-4ead6e44ea2f::placeholder,
+input#zip-1db7b5f6-a028-4f7b-80ba-ac24524464b0::placeholder {
+   font-size: 13px;
+}
+@media (max-width: 600px) {
+   .warrantyForm .hs_country.hs-country.hs-fieldtype-text.field.hs-form-field {
+      margin-top: 0px;
+   }
+   
+   .customForm fieldset.form-columns-1 .hs-input:not([type=checkbox]),
+   .customForm .hs-input:not([type=checkbox]) {
+      width: 100% !important;
+   }
+}
+
+.stickers {
+    padding-top: 70px;
+    margin-top: 10px;
+}
+
+
+/* Container holding the image and the text */
+
+.imagecontainer {
+    position: relative;
+    text-align: center;
+    color: white;
+    max-width:800px;
+  }
+
+
+  .newboxsquare {
+    padding: 50px;
+    border: 1px solid #eaeaea;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 2%;
+    transition: transform .6s;
+ }
+ 
+ .newboxsquare a:hover {
+    color: #bf0400;
+ }
+ 
+ .newboxsquare:hover {
+    color: #bf0400;
+ }
+
+
+
+.column {
+    float: left;
+    width: 25%;
+ }
+ 
+ .column3 {
+    float: left;
+    width: 75%;
+    padding-left: 40px;
+ }
+ 
+ .column_3 {
+    float: left;
+    width: 33.3%;
+ }
+ 
+ .one-third-column {
+    float: left;
+    width: 33%;
+ }
+ 
+ .two-thirds-column {
+    float: left;
+    width: 66%;
+ }

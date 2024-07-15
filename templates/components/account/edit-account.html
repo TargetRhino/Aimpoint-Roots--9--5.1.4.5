@@ -1,0 +1,289 @@
+<!-- Tab links -->
+<h4 class="nav-tab-wrapper">
+    <a href="#edit-account" class="nav-tab nav-tab-active" id="edit">{{lang 'account.settings.account_edit_tab'}}</a>
+    <a href="#additional-information" class="nav-tab" id="additional">{{lang 'account.settings.account_additional_tab'}}</a>
+</h4>
+
+<!-- Tab content -->
+<section id="edit-account" class="tab-content active">
+<form action="{{urls.account.update_action}}" data-edit-account-form class="form" method="post">
+    {{inject 'firstName' (lang 'forms.validate.account.edit.first_name')}}
+    {{inject 'lastName' (lang 'forms.validate.account.edit.last_name')}}
+    {{inject 'phoneNumber' (lang 'forms.validate.account.edit.phone')}}
+    {{inject 'currentPassword' (lang 'forms.validate.account.edit.password')}}
+    <fieldset class="form-fieldset">
+        <div class="form-row form-row--half">
+            <div class="form-field">
+                <label class="form-label" for="account_firstname">
+                    {{lang 'account.settings.first_name' }}
+                    <small>{{lang 'common.required' }}</small>
+                </label>
+                <input type="text" class="form-input" name="account_firstname" id="account_firstname" value="{{forms.edit_account.first_name}}">
+            </div>
+            <div class="form-field">
+                <label class="form-label" for="account_lastname">
+                    {{lang 'account.settings.last_name' }}
+                    <small>{{lang 'common.required' }}</small>
+                </label>
+                <input type="text" class="form-input" name="account_lastname" id="account_lastname" value="{{forms.edit_account.last_name}}">
+            </div>
+            <div class="form-field">
+                <label class="form-label" for="account_companyname">
+                    {{lang 'account.settings.company' }}
+                </label>
+                <input type="text" class="form-input" name="account_companyname" id="account_companyname" value="{{forms.edit_account.company_name}}">
+            </div>
+            <div class="form-field">
+                <label class="form-label" for="account_phone">
+                    {{lang 'account.settings.phone' }}
+                </label>
+                <input type="text" class="form-input" name="account_phone" id="account_phone" value="{{forms.edit_account.phone}}">
+            </div>
+            {{#each forms.edit_account.fields}}
+                {{{dynamicComponent 'components/common/forms'}}}
+            {{/each}}
+        </div>
+    </fieldset>
+    <div class="form-actions2">
+        <button data-v-d9f064fe="" role="button" class="base-button-red primary black !w-full  " tabindex="-1" id="wizard-btn">
+            <span data-v-d9f064fe="" class="top-line primary"></span>
+            <span data-v-d9f064fe="" class="background-top"></span>
+            <span data-v-d9f064fe="" class="button-inner">
+                <p data-v-d9f064fe="" class="text-h4">{{lang 'account.settings.update_details'}}</p>
+            </span>
+            <span data-v-d9f064fe="" class="background-bottom"></span>
+            <span data-v-d9f064fe="" class="bottom-line primary"></span>
+        </button>
+    </div>
+</form>
+<div class="form-actions2">
+    <button data-v-d9f064fe="" role="button" class="base-button-white primary white !w-full  " tabindex="-1" id="wizard-btn">
+        <span data-v-d9f064fe="" class="top-line primary"></span>
+        <span data-v-d9f064fe="" class="background-top"></span>
+        <span data-v-d9f064fe="" class="button-inner">
+            <p data-v-d9f064fe="" class="text-h4">Submit Tax Exemption</p>
+        </span>
+        <span data-v-d9f064fe="" class="background-bottom"></span>
+        <span data-v-d9f064fe="" class="bottom-line primary"></span>
+    </button>
+
+</div>
+</section>
+<section id="additional-information" class="tab-content">
+<form id="additional-information-form" action="https://connections.aimpoint.us/additionalinformation.php" class="form" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="account_user" id="account_user" value="{{customer.id}}">
+    <input type="hidden" name="account_email" id="account_email" value="{{customer.email}}">
+    <input type="hidden" name="account_firstname" id="account_firstname" value="{{forms.edit_account.first_name}}">
+    <input type="hidden" name="account_lastname" id="account_lastname" value="{{forms.edit_account.last_name}}">
+    <input type="hidden" name="account_group_name" id="account_group_name">
+    <fieldset class="form-fieldset">
+        <div class="form-row">
+            <div class="form-field">
+                <label class="form-label" for="account_group">
+                    {{lang 'account.settings.account_group' }}
+                </label>
+                <select id="account_group" name="account_group" class="form-select form-select--large">
+                    <option value="-1">Select</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label class="form-label" for="account_organization">
+                    {{lang 'account.settings.account_organization' }}
+                </label>
+                <select id="account_organization" name="account_organization" class="form-select form-select--large">
+                </select>
+            </div>
+            <div class="form-field">
+                <label class="form-label" for="account_agency">
+                    {{lang 'account.settings.account_agency' }}
+                </label>
+                <input type="text" id="account_agency" name="account_agency" class="form-input">
+            </div>
+            <div class="form-field">
+                <label class="form-label" for="account_document">
+                    {{lang 'account.settings.account_document' }}
+                    <a href="#openModal"><i class="material-icons">info</i></a>
+                </label>
+
+                <input type="file" class="form-file" name="account_document" id="account_document">
+            </div>
+            <div class="form-field">
+                <label class="form-label" for="account_terms">
+                    {{lang 'account.settings.account_terms' }}
+                </label>
+                <input type="checkbox" name="account_terms" id="account_terms">  {{lang 'account.settings.account_statement'}}
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-actions">
+
+        <button data-v-d9f064fe="" role="button" class="base-button-white primary white !w-full sm:!w-auto " tabindex="-1" name="send">
+            <span data-v-d9f064fe="" class="top-line primary"></span>
+            <span data-v-d9f064fe="" class="background-top"></span>
+            <span data-v-d9f064fe="" class="button-inner">
+                <p data-v-d9f064fe="" class="text-h4">{{lang 'account.settings.account_verify'}}</p>
+            </span>
+            <span data-v-d9f064fe="" class="background-bottom"></span>
+            <span data-v-d9f064fe="" class="bottom-line primary"></span>
+        </button>
+    </div>
+</form>
+</section>
+<div id="openModal" class="modalDialog">
+<div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Acceptable Documentation</h2>
+    <p> Scan or photograph ANY ONE of the documents listed below. <br />
+        - The name on your supporting documentation must match the name on the ship-to address and credit card used for the order.<br />
+        - If you choose to upload an ID card, or another document with sensitive information, please redact all sensitive information such as ID/badge numbers.</p>
+    <ul>
+        <li>Military ID (active, reserve, National Guard, or retired)</li>
+        <li>DD-214</li>
+        <li>Photo of Honorable Discharge Certificate</li>
+        <li>Federal Agency identification card or proof of employment</li>
+        <li>Law Enforcement ID card - State/County/Local/Railroad/University/Tribal</li>
+        <li>Firefighter/EMT identification card or State certification.</li>
+        <li>Business Card showing your name and affiliation</li>
+        <li>Signed letter on official letterhead identifying you as an employee of a listed organization</li>
+        <li>State issued Security Officer ID card or signed letter from employer verifying employment.</li>
+        <li>USAA membership, Military or Federal Credit Union membership, Military Exchange membership, VetVerify acceptance, etc</li>
+    </ul>
+</div>
+</div>
+
+<!-- Javascript to manage the form with the additional information of the user-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<script src="https://ecwportal.vertexsmb.com/wizard/button.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<script type="text/javaScript">
+/*Functionality for tabs on edit account page*/
+$('.nav-tab').click(function(e) {
+    //Toggle tab link
+    $(this).addClass('nav-tab-active').siblings().removeClass('nav-tab-active');
+
+    //Toggle target tab
+    $($(this).attr('href')).addClass('active').siblings().removeClass('active');
+});
+
+/*Dependent dropdown based on customer group selection */
+$(document).on('change', '#account_group', function(){
+    var account_group_id = $(this).val();
+    $('#account_group_name').val($("#account_group option:selected").text());
+    if(account_group_id != '-1') {
+        load_json_data(account_group_id);
+    }
+    else {
+        $('#account_organization').html('<option value="">Select Group</option>');
+    }
+});
+
+/* Gets the information of the organizations based on the groups */
+function load_json_data(parent_id)
+{
+    var html_code = '';
+    $.getJSON('https://connections.aimpoint.us/organizationsbygroup.php', function(data){
+        $.each(data, function(key, value){
+            if(value.parent_id == parent_id) {
+                html_code += '<option value="' + value.id + '">' + value.name + '</option>';
+            }
+        });
+        $('#account_organization').html(html_code);
+    });
+
+}
+
+/*Load customer groups from big commerce's API*/
+function setForm() {
+    if (location.hash == '#additional-information') {
+        $('#additional').addClass('nav-tab-active').siblings().removeClass('nav-tab-active');
+        $('#additional-information').addClass('active').siblings().removeClass('active');
+    }
+    $.ajax({
+        type: "GET",
+        url: 'https://connections.aimpoint.us/customergroups.php',
+        success: function (data) {
+            var option = '';
+            var obj = JSON.parse(data);
+            if(obj.length > 0){
+                for (var i=0;i<obj.length;i++){
+                    option += '<option value="'+ obj[i].id + '">' + obj[i].name + '</option>';
+                }
+                $('#account_group').append(option);
+            } else{
+                option = '<option value="">No Groups Found</option>';
+                $('#account_group').append(option);
+            }
+        }
+    });
+
+}
+
+
+/* On Load functions */
+$("#additional-information-form").validate({
+    rules: {
+        account_terms: "required",
+        account_group: "required",
+        account_organization: "required",
+        account_agency: "required",
+        account_document:"required"
+    },
+    messages: {
+        account_terms: "Please indicate that you accept the Statement of Eligibility",
+        account_group: "Please select a Group",
+        account_organization: "Please select an Organization/Status",
+        account_agency: "Please fill in an Agency/Branch",
+        account_document: "Please upload the documentation requested"
+    },
+    submitHandler: function(form) {
+        form.submit();
+    }
+});
+
+function sendExemptionToBC(id) {
+    $.post('https://connections.aimpoint.us/setcustomertaxexempt.php', {account_user: $('input#account_user').val(), tax_exempt_category: id}).done(function(response){
+        alert("Your information has been reported succesfully.");
+    });
+}
+
+function setVertexButton() {
+    /* Vertex function for tax exemption plugin */
+
+        var token = ''; 
+        var client_code = ''; 
+        var buyer_name = '';
+        $.getJSON('https://connections.aimpoint.us/getvertextoken.php', function(data){
+                token = data.access_token;
+                client_code = data.client;
+                buyer_name = $('input#account_firstname').val() + $('input#account_lastname').val() + ' (' + $('input#account_user').val() + ')';
+                // Security token returned by the federated security provider 
+                var btn = new vertex.Wizard({ 
+                    domNode:  document.getElementById('wizard-btn'), 
+                    wizardPath: 'https://ecwportal.vertexsmb.com/wizard', 
+                    accessToken: token, 
+                    clientCode: client_code,
+                    sellerCodes: ['Aimpoint'],
+                    overrides: [ {qId:2, value: buyer_name},
+]
+                }); 
+        });	
+        
+        window.addEventListener("message",function(event){ 
+            if(event.data && event.data.type=='createdCertificates'){ 
+                for(var i=0;i<event.data.data.length;i++)
+                { 
+                    console.log("certificateId="+event.data.data[i].id); 
+                    console.log("buyerCode="+event.data.data[i].buyerCode); 
+                    sendExemptionToBC(event.data.data[i].buyerCode);
+                } 
+            } 
+        });
+}
+
+/* Preset form values and vertex button at the end of the load*/
+setForm();
+setVertexButton();
+
+</script>

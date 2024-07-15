@@ -1,0 +1,24 @@
+/* Extra small screen / phone */
+@custom-media --xs (max-width: 639px);
+
+/* Small medium screen / phablet, large phones */
+@custom-media --sm (min-width: 640px);
+@custom-media --sm-max (max-width: 767px);
+
+/* Medium screen / tablet */
+@custom-media --md (min-width: 768px);
+@custom-media --md-max (max-width: 1023px);
+
+/* Large screen / small laptop */
+@custom-media --lg (min-width: 1024px);
+@custom-media --lg-max (max-width: 1279px);
+
+/* X Large screen / Laptop */
+@custom-media --xl (min-width: 1280px);
+@custom-media --xl-max (min-width: 1535px);
+
+/* X Large screen / Large desktop */
+@custom-media --2xl (min-width: 1536px);
+
+/* Quad HD / 4K */
+@custom-media --qhd (min-width: 1920px);

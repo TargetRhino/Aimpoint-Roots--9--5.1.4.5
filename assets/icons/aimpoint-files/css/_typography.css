@@ -1,0 +1,50 @@
+/* stylelint-disable custom-property-empty-line-before */
+/* stylelint-disable max-line-length */
+/* stylelint-disable custom-property-pattern */
+
+:root {
+  --font-family-base: 'Montserrat', sans-serif;
+  --font-weight-base: 400;
+  --font-weight-bold: 500;
+  --line-height-base: 1.4;
+  --letter-spacing: 0.03em;
+
+  --font-size-extra-small: 12px;
+  --font-size-smaller: 12px;
+  --font-size-small: 14px;
+  --font-size-medium-small: 14px;
+  --font-size-medium: 15px;
+  --font-size-medium-large: 17px;
+  --font-size-xl: 21px;
+  --font-size-xl-2xl: 21px;
+
+
+  --font-size-base: 15px @(--md) 16px @(--qhd) 17px;
+  --font-size-large: 16px @(--md) 18px @(--qhd) 19px;
+
+
+  
+  /* Headings
+  ********************/
+  --headings-font-family: 'Montserrat', sans-serif;
+  --headings-font-weight-light: 400;
+  --headings-font-weight-base: 500;
+  --headings-line-height: 1.1;
+  --h1-line-height: 1.6 @(--md) 1.516;
+
+
+
+  --h1-font-size: 17px @(--md) 18px @(--xl) 21px @(--qhd) 22px;
+  --h2-font-size: 17px @(--md) 18px @(--xl) 21px @(--qhd) 22px;
+  --h3-font-size: 17px @(--md) 18px @(--xl) 21px @(--qhd) 22px;
+  --h4-font-size: 15px;
+  --h5-font-size: 15px;
+  --h6-font-size: 14px;
+  --subheading-font-size: 17px @(--lg) 20px @(--qhd) 21px;
+  
+  --display-font-size: 27px @(--lg) 36px;
+
+  --icon-size: 1.5rem;
+  --icon-size-small: 1rem;
+  --icon-size-large: 4rem;
+}

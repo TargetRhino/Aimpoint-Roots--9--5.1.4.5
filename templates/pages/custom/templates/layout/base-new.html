@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ locale_name }}">
+    <head>
+        <title>{{ head.title }}</title>
+        {{{ resourceHints }}}
+        {{{ head.meta_tags }}}
+        {{{ head.config }}}
+        {{#block "head"}} {{/block}}
+
+        <link href="{{ head.favicon }}" rel="shortcut icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <script>
+            {{!-- Change document class from no-js to js so we can detect this in css --}}
+            document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+        </script>
+
+        {{> components/common/polyfill-script }}
+        <script>window.consentManagerTranslations = `{{{langJson 'consent_manager'}}}`;</script>
+
+        {{!-- Load Lazysizes script ASAP so images will appear --}}
+        <script>
+            {{!-- Only load visible elements until the onload event fires, after which preload nearby elements. --}}
+            window.lazySizesConfig = window.lazySizesConfig || {};
+            window.lazySizesConfig.loadMode = 1;
+        </script>
+        <script async src="{{cdn 'assets/dist/theme-bundle.head_async.js'}}"></script>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+    
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <!-- Google material fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+        
+        {{getFontsCollection font-display='block'}}
+        
+        <link rel="preload" href="{{cdn 'assets/dist/theme-bundle.font.js'}}" as="script">
+        <script async src="{{cdn 'assets/dist/theme-bundle.font.js'}}"></script>
+
+        {{{stylesheet '/assets/css/theme.css'}}}
+
+        {{{head.scripts}}}
+
+        {{~inject 'zoomSize' theme_settings.zoom_size}}
+        {{~inject 'productSize' theme_settings.product_size}}
+        {{~inject 'genericError' (lang 'common.generic_error')}}
+        {{~inject 'maintenanceModeSettings' settings.maintenance}}
+        {{~inject 'adminBarLanguage' (langJson 'admin')}}
+        {{~inject 'urls' urls}}
+        {{~inject 'secureBaseUrl' settings.secure_base_url}}
+        {{~inject 'cartId' cart_id}}
+        {{~inject 'channelId' settings.channel_id}}
+        {{~inject 'template' template}}
+        
+        {{#if page_type '===' 'product'}}
+            {{> components/common/facebook-like}}
+        {{else if page_type '===' 'blog' }}
+            {{> components/common/facebook-like}}
+        {{else if page_type '===' 'blog_post' }}
+            {{> components/common/facebook-like}}
+        {{/if}}
+
+        <script>
+            var theme_settings = {
+                show_fast_cart: {{theme_settings.show_fast_cart}},
+                linksPerCol: {{theme_settings.nav-links-per-col}},
+            };
+        </script>
+
+        {{~inject 'validationDictionaryJSON' (langJson 'validation_messages')}}
+        {{~inject 'validationFallbackDictionaryJSON' (langJson 'validation_fallback_messages')}}
+        {{~inject 'validationDefaultDictionaryJSON' (langJson 'validation_default_messages')}}
+        {{~inject 'carouselArrowAndDotAriaLabel' (lang 'carousel.arrow_and_dot_aria_label')}}
+        {{~inject 'carouselActiveDotAriaLabel' (lang 'carousel.active_dot_aria_label')}}
+        {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
+<style> @import url('https://fonts.cdnfonts.com/css/termina-test'); </style> 
+
+        {{!-- Get this loading ASAP --}}
+        <link rel="preload" href="{{cdn 'assets/dist/theme-bundle.main.js'}}" as="script">
+
+    
+        
+    </head>
+    <body>
+        <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
+
+        {{> pages/custom/templates/components/common/header-new }}
+        {{> components/common/body }}
+        {{> pages/custom/templates/components/common/footer-new }}
+        
+        <script>window.jQueryAlsoBought = window.jQueryTheme || window.jQuery;</script>
+<script src="//papathemes.com/content/alsoboughtaddon/alsobought.aimpoint.us.js" async></script>
+
+
+
+
+        <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+        <script>
+            {{!-- Exported in app.js --}}
+            function onThemeBundleMain() {
+                window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
+
+
+                // papathemes-alsobought
+                window.jQueryAlsoBought = window.jQueryTheme || window.jQuery;
+                window.AlsoBoughtOptions = {
+                    // independent: true,
+                    getScopeWithoutAlsoBought: function($scope) {
+                        return $scope.children().not('[data-also-bought]');
+                    },
+                    renderAlsoBought: function(alsoBought) {
+                        alsoBought.parentProductDetails.$scope.after(alsoBought.$alsoBoughtEl);
+                    }
+                };
+                var s = document.createElement('script');
+                s.src = "{{cdn 'assets/vendor/papathemes/alsobought.aimpoint.us.js' resourceHint='preload' as='script'}}";
+                s.async = true;
+                document.body.appendChild(s);
+
+            }
+        </script>
+        
+        <script async defer src="{{cdn 'assets/dist/theme-bundle.main.js'}}" onload="onThemeBundleMain()"></script>
+
+        {{{footer.scripts}}}
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            
+            
+            $("#linkSearchButton").click(function(){
+                $("#quickSearchDesktop").show();
+            });
+
+            $("#closeQuickSearch").click(function(){
+                $("#quickSearchDesktop").hide();
+            });
+
+            $(function() {
+
+
+                $(".navUser li.item-user").each(function(index){
+                    $(this).addClass("dropdown2");
+                    $(this).addClass("notChildren2");
+                    
+                    // alert($(this).find('search'));
+                     //if($(this).text().includes('Account')){
+                        $(".mega-menu").append('<li class="dropdown2 notChildren2 liMobileOnly">'+$(this).html()+'</li>');
+                    //}
+                   // $(".mega-menu").append($(this));
+                    //console.log("Elemento " + (index+1) + ": " + $(this).text());
+                });
+                $(".buttons").prepend('<span class="mobileDisplyaCart">'+$(".navUser-item--cart").html()+'</span>');
+
+                // $(".mega-menu").append('<li class="dropdown2 notChildren2 liMobileOnly">'+$("#searchMenu li").html()+'<div id="searchMobile">'+$("#quickSearch").html()+'</div></li>');
+                // console.log($("#quickSearch").html());
+
+                 /*$("#quickSearch").hide();
+                    $(".liMobileOnly #linkSearchButton").click(function(){
+                        $("#searchMobile").show();
+                    });*/
+                if(whatDevice()){
+                        
+                    $("#quickSearchMobile").hide();
+                    $("#quickSearchDesktop").hide();
+
+                }else{
+                    $("#category_description").addClass("order-1");
+                        $("#category_image").addClass("order-0");
+                    }
+
+                    $("#quickSearchDesktop").hide();
+                
+            });
+
+            function whatDevice() {
+                var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                if (isMobile) {
+                    return false;
+                } else {
+                    // El usuario está en un escritorio
+                    return true;
+                }
+            }
+</script>
+{{#if (occurrences 'Verified B2G Agency' customer.customer_group_name) '>' 0}}
+
+<script>
+    $(function() {
+        $('a.navPages-action').each(function(){
+            if($(this).attr('aria-label')=="Rewards"){
+                $(this).parent().hide();
+            }
+        });
+    });
+</script>
+{{/if}}
+
+
+    </body>
+</html>

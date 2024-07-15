@@ -1,0 +1,316 @@
+{{#partial "page"}}
+<div class="container">
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    <!-- <main class="page"> -->
+    <h2 class="page-heading">REGISTER YOUR PRODUCT</h2>
+    {{> components/account/navigation account_page='product_registration'}}
+     <p>Registering your product is simple, fast and full of benefits.</p>
+<!-- Tab links -->
+<ul class="nav nav-tabs" id="registration-tabs">
+    <li class="nav-item"><a href="#register-product" class="nav-link active" id="register">{{lang 'account.products.add_product'}}</a></li>
+    <li class="nav-item"><a href="#my-products" class="nav-link" id="list">{{lang 'account.products.list_products'}}</a></li>
+</ul>
+
+<section id="my-products" class="tab-content">
+    <div style="overflow-x:auto;">
+        <table class="table table--line wishlists-table w-auto" id="my-products">
+        <thead class="table-thead">
+            <tr>
+                <th>{{lang 'account.products.serial_number'}}</th>
+                <th>{{lang 'account.products.sku'}}</th>
+                <th>{{lang 'account.products.model'}}</th>
+                <th>{{lang 'account.products.dealer'}}</th>
+                <th>{{lang 'account.products.purchase_date'}}</th>
+                <th>{{lang 'account.products.price'}}</th>
+                <th>{{lang 'account.products.status'}}</th>
+            </tr>
+        </thead>
+        <tbody class="table-tbody">
+        
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        
+        </tbody>
+        </table>
+    </div>
+</section>
+<section id="register-product" class="tab-content active">
+
+    <form id="register-product-form" class="form" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="bigcommerce_user_id" id="bigcommerce_user_id" value="{{customer.id}}">
+        <input type="hidden" name="bigcommerce_user_email" id="bigcommerce_user_email" value="{{customer.email}}">
+        
+        <fieldset class="form-fieldset">
+            <div class="form-row">
+                <div class="form-field">
+                    <label class="form-label" for="purchased_in_us">
+                        {{lang 'account.products.purchased_in_us' }} *
+                    </label>
+                    <select id="purchased_in_us" name="purchased_in_us" class="form-select form-select--large">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+            <div id="questions" class="form-row form-row--half">
+                <div class="form-field">
+                    <label class="form-label" for="serial_number">
+                        <div class="info-icon"> <span style="position:relative;top: -8px;">{{lang 'account.products.serial_number' }} *</span> <a href="#openModal"><i class="material-icons">info</i></a></div>
+                    </label>
+                    <input type="text" id="serial_number" name="serial_number" class="form-input" required >
+                </div>
+                <div class="form-field">
+                    <label class="form-label" for="purchased_in_sel">
+                        {{lang 'account.products.purchased_in' }} *
+                    </label>
+                    <select id="purchased_in_sel" name="purchased_in_sel" class="form-select form-select--large">
+                        <option value="Aimpoint.us">Aimpoint.us</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <input type="text" id="dealer" name="dealer" class="form-input" style="display: none;" value="Aimpoint.us" placeholder="{{lang 'account.products.purchased_in_where' }}" required>
+                </div>
+                <div class="form-field">
+                    <label class="form-label" for="purchase_date">
+                        {{lang 'account.products.purchase_date' }} *
+                    </label>
+                    <input type="date" id="purchase_date" name="purchase_date" class="form-input" required date>
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="price">
+                        {{lang 'account.products.price' }}
+                    </label>
+                    <div style="display:flex;">
+                        <input type="number" id="price" name="price" class="form-input" style="width:70%;" required >
+                        <select id="currency" name="currency" class="form-select form-select" style="width:30%;">
+                            <option value="USD">USD</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-field">
+                    <label class="form-label" for="proof_of_buy">
+                        {{lang 'account.products.file'}} 
+                    </label>
+
+                    <input type="file" class="form-file" name="proof_of_buy" id="proof_of_buy">
+                </div>
+            </div>
+        </fieldset>
+        <div id="submit-area"  class="form-actions">
+            
+            <input type="submit" name="btnSubmit" id="btnSubmit" value="{{lang 'account.products.register'}}" class="button button--primary">
+        </div>
+    </form>
+    <div id="message">
+        Please visit our global site at <a style="color: #bc0d0e" href="https://www.aimpoint.com/user-account/product-registration?utm_source=Aimpoint.us&utm_medium=Refferal&utm_id=Product+Registration_nonUS" target="_blank">Aimpoint.com</a> to complete your registration.
+    
+    </div>
+</section>
+
+<div id="openModal" class="modalDialog">
+    <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Serial Number</h2>
+        <ul>
+            <li>SIGHTS: 6-8 digits in a row, starting WITHOUT a capital letter i.e. 01234567</li>
+            <li>MAGNIFIERS: 11 digits, with one or two letters in the middle i.e. 1234XX12345</li>
+        </ul>
+    </div>
+</div>
+
+</div>
+</div>
+{{/partial}}
+{{> pages/custom/templates/layout/base-new}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+
+<script type="text/javaScript">
+    /* Function to authenticate through aimpoint connector API */
+    var token;
+
+        $('#message').hide();
+
+        $.validator.addMethod(
+            "regex",
+            function(value, element, regexp) {
+                var check = false;
+                return this.optional(element) || regexp.test(value);
+            },
+            "Please check your input."
+        );
+
+        var baseUrl = "{{theme_settings.aimpoint_conn_api_base_url}}" + "{{theme_settings.aimpoint_conn_api_login_path}}";
+        var email = "{{theme_settings.aimpoint_conn_api_username}}";
+        var password = "{{theme_settings.aimpoint_conn_api_password}}";
+        var formData = {
+            email: "{{theme_settings.aimpoint_conn_api_username}}",
+            password: "{{theme_settings.aimpoint_conn_api_password}}"
+        };
+        var fd = new FormData();    
+        fd.append( 'email', "{{theme_settings.aimpoint_conn_api_username}}");
+        fd.append( 'password', "{{theme_settings.aimpoint_conn_api_password}}");
+        $.ajax({
+            type: "POST",
+            url: baseUrl,
+            data: fd,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                token = data['access_token'];
+                listUserProducts();
+            },
+            failure: function (data) {
+                console.log("Failure : ", data.responseText);
+                //alert(data.responseText);
+            },
+            error: function (data) {
+                console.log("Error : ", data.responseText);
+                //alert(data.responseText);
+            }
+        });
+
+        $("#register-product-form").validate({
+            rules: {
+                serial_number: { required: true, regex : /^\d[A-Z0-9\s]*$/, minlength: 6, maxlength:11 },
+                purchase_date: "required",
+                price: "required",
+            },
+            messages: {
+                serial_number: "SIGHTS - Digits only, do not start with capital letter. MAGNIFIERS - 11 digits, with one or two letters in the middle",
+                purchase_date: "Please specify the purchase date",
+                price: "Please specify the price",
+                proof_of_buy: "Please upload the documentation requested"
+            },
+            submitHandler: function(form) {
+                 // Get form     
+                // FormData object 
+                var data = new FormData(form);
+
+                var connectionsUrl = "{{theme_settings.aimpoint_conn_api_base_url}}" + "{{theme_settings.aimpoint_conn_api_products_path}}";
+                $.ajax({
+                    type: "POST",
+                    enctype: 'multipart/form-data',
+                    url: connectionsUrl,
+                    headers: {
+                        "Authorization": "Bearer " + token
+                    },
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    timeout: 800000,
+                    success: function (data) {
+                        alert(data[0]);
+                        console.log("SUCCESS : ", data);
+                        $("#btnSubmit").prop("disabled", false);
+                        $('#list')[0].click();
+                        listUserProducts();
+                    },
+                    error: function (e) {
+                        //alert("Error registering the product");
+                        console.log("ERROR : ", e);
+                        $("#btnSubmit").prop("disabled", false);
+                    }
+                });
+            }
+        });
+        
+
+        $("#purchased_in_sel").change(function () {
+            var selected_option = $('#purchased_in_sel').val();
+          
+            if (selected_option === 'Other') {
+                $('#dealer').val('');
+                $('#dealer').attr('pk','1').show();
+            }
+            if (selected_option != 'Other') {
+                $('#dealer').val('Aimpoint.us');
+                $("#dealer").removeAttr('pk').hide();
+            }
+        });
+
+        $("#purchased_in_us").change(function () {
+            var selected_option = $('#purchased_in_us').val();
+          
+            if (selected_option === 'No') {
+                $('#questions').hide();
+                $('#submit-area').hide();
+                $('#message').show();
+            }
+            if (selected_option != 'No') {
+                $('#questions').show();
+                $('#submit-area').show();
+                $('#message').hide();
+            }
+        });
+
+  
+
+    /*Functionality for tabs on edit account page*/
+    $('.nav-link').click(function(e) {
+        
+        //Toggle tab link
+        $(this).addClass('active').siblings().removeClass('active');
+
+        //Toggle target tab
+        $($(this).attr('href')).addClass('active').siblings().removeClass('active');
+    });
+
+    const formatToCurrency = amount => {
+        return amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+    };
+    
+
+    function listUserProducts() {
+        var url = "{{theme_settings.aimpoint_conn_api_base_url}}" + "{{theme_settings.aimpoint_conn_api_products_path}}" + "/" + "{{theme_settings.aimpoint_conn_api_products_user_param}}" + "/" + "{{customer.id}}";
+        
+        $.ajax({
+            type: "GET",
+            url: url,
+            headers: {
+                "Authorization": "Bearer " + token
+            },
+            cache: false,
+            dataType: "json",
+            success: function (data) {
+                $('#my-products > tbody').empty();
+                $.each(data[0], function (i, item) {
+                   
+                    var rows = 
+                    "<tr>" +
+                    "<td>" + item.serial_number + "</td>" +
+                    "<td>" + item.sku + "</td>" +
+                    "<td style='width:20%;'>" + item.model + "</td>" +
+                    "<td>" + item.dealer + "</td>" +
+                    "<td>" + item.purchase_date.slice(0, 10) + "</td>" +
+                    "<td>" + item.currency + " " + formatToCurrency(item.price) + "</td>" +
+                    "<td>" + item.status + "</td>" +
+                    "</tr>";
+                    $('#my-products > tbody').append(rows);
+                });
+                console.log(data);
+            },
+            failure: function (data) {
+                console.log("Failure : ", data.responseText);
+                //alert(data.responseText);
+            },
+            error: function (data) {
+                console.log("Error : ", data.responseText);
+                //alert(data.responseText);
+            }
+        });
+    }
+
+    
+</script>

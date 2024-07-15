@@ -1,0 +1,151 @@
+
+{{assignVar "link2" "https://aimpoint.us/le-military-discount-thank-you#step2"}}
+{{assignVar "link3" "https://aimpoint.us/rewards"}}
+{{assignVar "link4" "https://aimpoint.us/register-your-sight"}}
+
+{{#if (occurrences 'Verified B2G Agency' customer.customer_group_name) '>' 0}}
+    {{assignVar "link2" "https://aimpoint.us/aimpoint-professional-customers-verified"}}
+{{/if}}
+{{#if (occurrences 'Verified IOP, Military, Law Enforcement, Federal Agencies, Fire and EMS, Private Security and Security Contractors, B2G Agency' customer.customer_group_name) '>' 0}}
+    {{assignVar "link2" "https://aimpoint.us/shop-products/le-mil-access-only/"}}
+{{/if}}
+
+
+{{#if (occurrences 'Verified B2G Agency' customer.customer_group_name) '>' 0}}
+    {{assignVar "link3" "https://aimpoint.us/aimpoint-professional-customers-verified"}}
+{{/if}}
+
+
+
+
+{{#partial "page"}}
+<div class="container">
+    <section class="page">
+        <div class="page-content page-content--textCenter">
+            <h1 class="page-heading">{{lang 'create_account.created.heading'}}</h1>
+            <p>{{{lang 'create_account.created.intro' store_name=settings.store_name email=customer.email}}}</p>
+            <a class="button button--primary" href="{{create_account.continue_url}}">{{lang 'create_account.created.continue'}}</a>
+        </div>
+    </section>
+</div>
+
+
+<div id="openModalAccount" class="modalDialogAccount visible">
+    <div>
+        <a href="#close" title="Close" class="close" id="closeAccount">X</a>
+        <h2>You are now logged in</h2>
+        <p>Where do you want to go next?</p>
+        
+        <div class="container" style="padding-top: 20px;">
+            <div class="row">
+                
+                <div class="col-12">
+            <div class="center" style="padding-bottom: 20px;">
+                <button data-v-d9f064fe="" role="button" class="base-button primary black blackRed !w-full" tabindex="-1">
+                    <span data-v-d9f064fe="" class="top-line primary"></span>
+                    <span data-v-d9f064fe="" class="background-top"></span>
+                    <span data-v-d9f064fe="" class="button-inner">
+                        <p data-v-d9f064fe="" class="text-h4">My Account</p>
+                        <div data-v-d9f064fe="" class="relative w-4 h-5">
+                            <span data-v-d9f064fe="" class="nuxt-icon nuxt-icon--fill absolute inset-0 icon">
+                                <i class="icon" aria-hidden="true">
+                                    <svg><use xlink:href="#icon-chevron-right" /></svg>
+                                </i>
+                            </span>
+                        </div>
+                    </span>
+                    <span data-v-d9f064fe="" class="background-bottom"></span>
+                    <span data-v-d9f064fe="" class="bottom-line primary"></span>
+                    <a data-v-d9f064fe="" href="#close" id="closeAccount2" rel="noopener noreferrer" aria-label="My Account" class="absolute inset-0 z-20 w-full h-full" ></a>
+                </button>
+            </div>
+
+
+            <div class="center" style="padding-bottom: 20px;">
+                <button data-v-d9f064fe="" role="button" class="base-button-red primary black blackRed !w-full " tabindex="-1">
+                    <span data-v-d9f064fe="" class="top-line primary"></span>
+                    <span data-v-d9f064fe="" class="background-top"></span>
+                    <span data-v-d9f064fe="" class="button-inner">
+                        <p data-v-d9f064fe="" class="text-h4">Le/Military Discount</p>
+                        <div data-v-d9f064fe="" class="relative w-4 h-5">
+                            <span data-v-d9f064fe="" class="nuxt-icon nuxt-icon--fill absolute inset-0 icon">
+                                <i class="icon" aria-hidden="true">
+                                    <svg><use xlink:href="#icon-chevron-right" /></svg>
+                                </i>
+                            </span>
+                        </div>
+                    </span>
+                    <span data-v-d9f064fe="" class="background-bottom"></span>
+                    <span data-v-d9f064fe="" class="bottom-line primary"></span>
+                    <a data-v-d9f064fe="" href="{{getVar 'link2'}}" rel="noopener noreferrer" aria-label="Le/Military Discount" class="absolute inset-0 z-20 w-full h-full" ></a>
+                </button>
+            </div>
+
+
+           
+
+
+            <div class="center" style="padding-bottom: 20px;">
+                <button data-v-d9f064fe="" role="button" class="base-button primary black blackRed !w-full" tabindex="-1">
+                    <span data-v-d9f064fe="" class="top-line primary"></span>
+                    <span data-v-d9f064fe="" class="background-top"></span>
+                    <span data-v-d9f064fe="" class="button-inner">
+                        <p data-v-d9f064fe="" class="text-h4">Rewards Program</p>
+                        <div data-v-d9f064fe="" class="relative w-4 h-5">
+                            <span data-v-d9f064fe="" class="nuxt-icon nuxt-icon--fill absolute inset-0 icon">
+                                <i class="icon" aria-hidden="true">
+                                    <svg><use xlink:href="#icon-chevron-right" /></svg>
+                                </i>
+                            </span>
+                        </div>
+                    </span>
+                    <span data-v-d9f064fe="" class="background-bottom"></span>
+                    <span data-v-d9f064fe="" class="bottom-line primary"></span>
+                    <a data-v-d9f064fe="" href="{{getVar 'link3'}}" rel="noopener noreferrer" aria-label="Rewards Program" class="absolute inset-0 z-20 w-full h-full" ></a>
+                </button>
+            </div>
+
+
+
+
+
+            <div class="center" style="padding-bottom: 20px;">
+                <button data-v-d9f064fe="" role="button" class="base-button primary black blackRed !w-full " tabindex="-1">
+                    <span data-v-d9f064fe="" class="top-line primary"></span>
+                    <span data-v-d9f064fe="" class="background-top"></span>
+                    <span data-v-d9f064fe="" class="button-inner">
+                        <p data-v-d9f064fe="" class="text-h4">Register your Sight</p>
+                        <div data-v-d9f064fe="" class="relative w-4 h-5">
+                            <span data-v-d9f064fe="" class="nuxt-icon nuxt-icon--fill absolute inset-0 icon">
+                                <i class="icon" aria-hidden="true">
+                                    <svg><use xlink:href="#icon-chevron-right" /></svg>
+                                </i>
+                            </span>
+                        </div>
+                    </span>
+                    <span data-v-d9f064fe="" class="background-bottom"></span>
+                    <span data-v-d9f064fe="" class="bottom-line primary"></span>
+                    <a data-v-d9f064fe="" href="{{getVar 'link4'}}" rel="noopener noreferrer" aria-label="Register your Sight" class="absolute inset-0 z-20 w-full h-full" ></a>
+                </button>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$("#closeAccount").click(function(){
+    $("#openModalAccount").removeClass("visible");
+});
+$("#closeAccount2").click(function(){
+    $("#openModalAccount").removeClass("visible");
+});
+
+</script>
+
+
+
+{{/partial}}
+{{> pages/custom/templates/layout/base-new}}

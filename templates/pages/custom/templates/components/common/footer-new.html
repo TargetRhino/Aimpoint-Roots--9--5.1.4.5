@@ -1,0 +1,136 @@
+{{#if banners.bottom}}
+    {{#if settings.data_tag_enabled}}
+        <div class="banners" data-banner-location="bottom">
+            {{#each (limit banners.bottom_metadata 1)}}
+                <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
+                    <div data-event-type="promotion-click">
+                        {{{this.content}}}
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <div class="banners" data-banner-location="bottom">
+            <div class="banner">
+                {{{limit banners.bottom 1}}}
+            </div>
+        </div>
+    {{/if}}
+{{/if}}
+
+
+                    
+<footer class="footer" role="contentinfo">
+    <h2 class="footer-title-sr-only">{{lang 'footer.title'}}</h2>
+    <div class="container">
+        <section class="footer-info 4a616d6573">
+            
+            <article class="footer-info-col footer-info-dropdown1 footer-info-col--small" data-section-type="footer-categories">
+                <ul class="footer-info-list">
+                    <li><a href="https://aimpoint.us/sitemap.php">Sitemap</a></li>
+                    <li><a href="/support/">Support</a></li>
+                    <li><a href="/about/">About Aimpoint<sup></sup></a></li>
+                    <li><a href="/contact-aimpoint/">Contact Us</a></li>
+                    <li><a href="/warranty-service/">Warranty and Service</a></li>
+                    <li><a href="/register-your-sight/">Register Your Sight</a></li>
+                </ul>
+            </article>
+
+            <article class="footer-info-col footer-info-dropdown1 footer-info-col--small" data-section-type="footer-webPages">
+                <ul class="footer-info-list">
+                    <li><a href="/manuals-guides/">User Manuals</a></li>
+                    <li><a href="/shipping-delivery/">Shipping & Delivery</a></li>
+                    <li><a href="/returns/">Returns</a></li>
+                    <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                    <li><a href="/terms-conditions/">Terms & Conditions</a></li>
+                    <li><a href="/export-restriction-notice/">Export Restrictions<br> Notice</a></li>
+                </ul>
+            </article>
+        
+            {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
+                <article class="footer-info-col footer-info-dropdown1 footer-info-col--small" data-section-type="footer-brands">
+                    <ul class="footer-info-list">
+                        <li><a href="/news-updates/">News & Updates</a></li>
+                        <li><a href="/join-aimpoint-vip-club/">Connect with Aimpoint<sup></sup></a></li>
+                        <li><a href="/le-military-discount/">Law Enforcement/Military Discount</a></li>
+                        <li><a href="/aimpoint-professional-customers/">RFQ/Agency Request</a></li>
+                        <li><a href="/training/">Training</a></li>
+                        {{#if (occurrences 'Verified B2G Agency' customer.customer_group_name) '==' 0}}
+                        <li><a href="/rewards/">Rewards Program</a></li>
+                        {{/if}}
+                    </ul>
+                </article>
+            {{/and}}
+            
+            {{#if theme_settings.social_icons_footer}}
+                <article class="footer-info-col footer-info-col2 footer-mobile-limited footer-info-col--small" data-section-type="footer-webPages">
+                    <h5 class="footer-info-heading">{{lang 'social.connect'}}</h5>
+                    {{> components/common/social-links}}
+                    {{#if settings.show_newsletter_box}}
+                        <div class="footer-newsletter">
+                            <div class="container">
+                                {{> pages/custom/templates/components/common/suscription-form-new }}
+                            </div>
+                        </div>
+                    {{/if}}
+                    <div  class="container">
+                        <h2 class="footer-info-list1">FOLLOW US</h2>
+                        <p>
+                            <a class="socialicons" href="https://www.facebook.com/aimpoint/" target="_blank">
+                                <img src="https://cdn11.bigcommerce.com/s-botjf27kl5/product_images/uploaded_images/iconfinder-06-facebook-104498.png?t=1589033292&_ga=2.133575112.791846521.1589030797-1416153245.1588592384" width="24">
+                            </a>
+                            <a class="socialicons" href="https://twitter.com/aimpointusa?lang=en" target="_blank">
+                                <img src="https://cdn11.bigcommerce.com/s-botjf27kl5/images/stencil/original/image-manager/x-logo-black.png?t=1713892609" width="24">
+                            </a>
+                            <a class="socialicons" href="https://www.instagram.com/aimpointusa/?hl=en" target="_blank">
+                                <img src="https://cdn11.bigcommerce.com/s-botjf27kl5/product_images/uploaded_images/ig.png?t=1589034341&_ga=2.141449332.791846521.1589030797-1416153245.1588592384" width="24">
+                            </a>
+                            <a class="socialicons" href="https://www.youtube.com/channel/UC_NUPYJKEe2Y5qYLtGad4dw" target="_blank">
+                                <img src="https://cdn11.bigcommerce.com/s-botjf27kl5/product_images/uploaded_images/iconfinder-icon-play-211876.png?t=1589033878&_ga=2.174985444.791846521.1589030797-1416153245.1588592384" width="24">
+                            </a>
+                        </p>
+                    </div>
+                </article>
+            {{/if}}
+            
+
+
+            
+        </section>
+
+        <div class="footer-copyright">
+            {{> pages/custom/templates/components/common/payment-icons-new }}
+
+        
+            {{#if theme_settings.show_copyright_footer}}
+                <p class="powered-by">Aimpoint️ Inc 7309 Gateway Court, Manassas, VA, 20109, US - &copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
+            {{/if}}
+        </div>
+
+        
+        {{#or theme_settings.show_powered_by theme_settings.show_built_by}}
+            <div class="footer-copyright" style="font-size: 12px;">
+                {{#if theme_settings.show_powered_by}}
+                    <p class="powered-by">Powered by <a href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC" rel="nofollow">BigCommerce</a></p>
+                {{/if}}
+                {{#if theme_settings.show_built_by}}
+                    <p class="powered-by">Theme by <a href="https://www.weizenyoung.com/" rel="nofollow">Weizen Young</a></p>
+                {{/if}}
+            </div>
+        {{/or}}
+    </div>
+    {{{region name="ssl_site_seal--global"}}}
+</footer>
+
+{{#if (occurrences 'Verified B2G Agency' customer.customer_group_name) '>' 0}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(function() {
+        $('a.navPages-action').each(function(){
+            if($(this).attr('aria-label')=="Rewards"){
+                $(this).parent().hide();
+            }
+        });
+    });
+</script>
+{{/if}}

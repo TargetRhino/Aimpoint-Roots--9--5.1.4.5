@@ -1,0 +1,7 @@
+{{#if product.can_purchase}}
+<div class="productView-alsoBought-item-image">
+    <label class="productView-alsoBought-thumbnail-label" for="productView-alsoBought-item-checkbox-{{product.id}}">
+        <img src="{{getImage product.main_image 'productthumb_size' (cdn theme_settings.default_image_product)}}" alt="{{product.main_image.alt}}">
+    </label>
+</div>
+{{/if}}

@@ -1,0 +1,219 @@
+<article
+    class="card
+    {{#if alternate}} card--alternate{{/if}}
+    {{#or price.non_sale_price_with_tax price.non_sale_price_without_tax}} has-sale-price{{/or}}"
+    {{#if settings.data_tag_enabled}}
+        data-event-type="{{event}}"
+        data-entity-id="{{id}}"
+        data-position="{{position}}"
+        data-name="{{name}}"
+        data-product-category="
+        {{#each category}}
+            {{#if @last}}
+                {{this}}
+            {{else}}
+                {{this}}, 
+            {{/if}}
+        {{/each}}"
+        data-product-brand="{{brand.name}}"
+        data-product-price="
+        {{#or customer (unless theme_settings.restrict_to_login)}}
+            {{#if price.with_tax}}
+                {{price.with_tax.value}}
+            {{else}}
+                {{price.without_tax.value}}
+            {{/if}}
+        {{else}}
+            {{lang 'common.login_for_pricing'}}
+        {{/or}}"
+    {{/if}}>
+    <figure class="card-figure">
+        {{#or price.sale_price_with_tax.value price.sale_price_without_tax.value}}
+            {{#if theme_settings.show_sale_badges}}
+                <div class="sale-flag-side">
+                    <span class="sale-text">Sale</span>
+                </div>
+            {{/if}}
+        {{/or}}
+        {{#if theme_settings.show-stock-badge}}
+            {{#if stock_level}}
+                {{#lte stock_level 5}}
+                    <div class="stock-badge">
+                        <span class="stock-message">Only {{stock_level}} left in stock</span>
+                    </div>
+                {{/lte}}
+            {{/if}}
+            {{#if out_of_stock_message}}
+                <div class="stock-badge">
+                    <span class="stock-message">{{{out_of_stock_message}}}</span>
+                </div>
+            {{/if}}
+        {{/if}}
+
+        {{#is stock_level 0}}
+            {{#unless out_of_stock_message}}
+                <div class="stock-badge">
+                    <span class="stock-message">Out of stock</span>
+                </div>
+            {{/unless}}
+        {{/is}}
+
+        <a href="{{url}}" 
+           class="card-figure__link"
+           aria-label="{{> components/products/product-info}}"
+           {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}
+        >
+            <div class="card-img-container">
+                <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+            </div>
+        </a>
+        {{#or theme_settings.show_product_quick_view show_cart_action show_compare}}
+            <figcaption class="card-figcaption">
+                <div class="card-figcaption-body">
+                    <div class="card-figcaption--action-buttons">
+                    {{#unless hide_product_quick_view}}
+                        {{#if theme_settings.show_product_quick_view}}
+                            {{#if settings.data_tag_enabled}}
+                                <a class="button button--secondary button--small card-figcaption-button quickview" data-event-type="product-click" data-product-id="{{id}}">{{lang 'products.quick_view'}}-1</a>
+                            {{else}}
+                            <div class="button_div col-6">
+                                <button data-v-d9f064fe="" role="button" class="base-button primary black  !w-full" tabindex="-1">
+                                    <span data-v-d9f064fe="" class="top-line primary"></span>
+                                    <span data-v-d9f064fe="" class="background-top"></span>
+                                    <span data-v-d9f064fe="" class="button-inner">
+                                        <p data-v-d9f064fe="" class="text-h4">{{lang 'products.quick_view'}}</p>
+                                        <div data-v-d9f064fe="" class="relative w-4 h-4">
+                                            <span data-v-d9f064fe="" class="nuxt-icon nuxt-icon--fill absolute inset-0 icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" viewBox="0 0 24 24">
+                                                    <path fill="currentColor" fill-rule="evenodd" d="m15.0001 5.29297 6.7071 6.70713-6.7071 6.7071-.7071-.7071 6-6-6-6.00002.7071-.70711Z" clip-rule="evenodd"></path>
+                                                    <path fill="currentColor" fill-rule="evenodd" d="M2.5 11.5h18v1h-18v-1Z" clip-rule="evenodd"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </span>
+                                    <span data-v-d9f064fe="" class="background-bottom"></span>
+                                    <span data-v-d9f064fe="" class="bottom-line primary"></span>
+                                    <a data-v-d9f064fe="" href="{{add_to_cart_url}}" target="_blank" rel="noopener noreferrer" aria-label="{{lang 'products.quick_view'}}" class="absolute inset-0 z-20 w-full h-full  quickview" data-product-id="{{id}}"></a>
+                                </button>
+                            </div>
+                            {{/if}}
+                        {{/if}}
+                    {{/unless}}
+                    {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                        {{#if show_cart_action}}
+                            {{#if has_options}}
+                                <a href="{{url}}" data-event-type="product-click" class="button button--small card-figcaption-button" data-product-id="{{id}}">{{lang 'products.choose_options'}}-3</a>
+                            {{/if}}
+                            {{#if pre_order}}
+                                <a href="{{pre_order_add_to_cart_url}}" data-event-type="product-click" class="button button--small card-figcaption-button">{{lang 'products.pre_order'}}-4</a>
+                            {{/if}}
+                            {{#if add_to_cart_url }}
+                            <div class="button_div col-6">
+                                <button data-v-d9f064fe="" role="button" class="base-button-red primary black blackRed !w-full" tabindex="-1">
+                                    <span data-v-d9f064fe="" class="top-line primary"></span>
+                                    <span data-v-d9f064fe="" class="background-top"></span>
+                                    <span data-v-d9f064fe="" class="button-inner">
+                                        <p data-v-d9f064fe="" class="text-h4">{{lang 'products.add_to_cart'}}</p>
+                                        <div data-v-d9f064fe="" class="relative w-4 h-4">
+                                            <span data-v-d9f064fe="" class="nuxt-icon nuxt-icon--fill absolute inset-0 icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" viewBox="0 0 24 24">
+                                                    <use xlink:href="#icon-cart" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </span>
+                                    <span data-v-d9f064fe="" class="background-bottom"></span>
+                                    <span data-v-d9f064fe="" class="bottom-line primary"></span>
+                                    <a data-v-d9f064fe="" href="{{add_to_cart_url}}" rel="noopener noreferrer" aria-label="{{lang 'products.add_to_cart'}}" class="absolute inset-0 z-20 w-full h-full "></a>
+                                </button>
+                            </div>
+                            {{/if}}
+                            {{#if out_of_stock_message }}
+                            <div class="button_div col-6">
+                                <button data-v-d9f064fe="" role="button" class="base-button primary black !w-full" tabindex="-1">
+                                    <span data-v-d9f064fe="" class="top-line primary"></span>
+                                    <span data-v-d9f064fe="" class="background-top"></span>
+                                    <span data-v-d9f064fe="" class="button-inner">
+                                        <p data-v-d9f064fe="" class="text-h4">{{out_of_stock_message}}</p>
+                                        <div data-v-d9f064fe="" class="relative w-4 h-4">
+                                            <span data-v-d9f064fe="" class="nuxt-icon nuxt-icon--fill absolute inset-0 icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" viewBox="0 0 24 24">
+                                                    <use xlink:href="#icon-cart" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </span>
+                                    <span data-v-d9f064fe="" class="background-bottom"></span>
+                                    <span data-v-d9f064fe="" class="bottom-line primary"></span>
+                                    <a data-v-d9f064fe="" href="{{url}}" data-event-type="product-click" data-product-id="{{id}}" rel="noopener noreferrer" aria-label="{{out_of_stock_message}}" class="absolute inset-0 z-20 w-full h-full"></a>
+                                </button>
+                            </div>
+                            {{/if}}
+                        {{/if}}
+                    {{/or}}
+                    </div>
+                    {{#if show_compare}}
+                        <label class="card-compare" for="compare-{{id}}">
+                            <input type="checkbox" class="compare-input" name="products[]" value="{{id}}" id="compare-{{id}}" data-compare-id="{{id}}"> <span style="display:none;">Remove from </span>{{lang 'products.compare'}}
+                        </label>
+                        <div class="compare-button-wrap">
+                            <a class="compare-button" href="{{urls.compare}}" data-compare-nav>Compare <span class="countPill countPill--positive countPill--alt"></span> Items</a>
+                        </div>
+                    {{/if}}
+                </div>
+            </figcaption>
+        {{/or}}
+    </figure>
+    <div class="card-body">
+        <div>
+            <h4 class="card-title">
+                <a aria-label="{{> components/products/product-info}}" 
+                    href="{{url}}"
+                    {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}
+                >
+                    {{name}}
+                </a>
+            </h4>
+            {{#if theme_settings.card-show-brand}}
+                {{#if brand.name}}
+                    <p class="card-text brand-name" data-test-info-type="brandName">{{brand.name}}</p>
+                {{else}}
+                    <p></p>
+                {{/if}}
+            {{/if}}
+            <div class="card-text" data-test-info-type="price">
+                <h2>
+                {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                    {{> components/products/price price=price}}
+                {{else}}
+                    {{> components/common/login-for-pricing}}
+                {{/or}}
+            </h2>
+            </div>
+        </div>
+        <hr>
+        <div class="card-details">
+            <hr>
+            <div>
+                <div class="width-50 red">Item</div>
+                <div class="width-50 float-end right red"># {{sku}}</div>
+            </div>
+
+            <p class="text-product-card"> <span>{{#filter custom_fields 'Description' property='name' }}</span>
+     {{value}}
+    {{/filter}}</p>
+        <div class="yotpo bottomLine"
+     data-product-id="{{id}}">
+    </div>
+
+            {{#and rating show_rating}}
+                <p class="card-text" data-test-info-type="productRating">
+                    <span class="rating--small">
+                        {{> components/products/ratings rating=rating}}
+                    </span>
+                </p>
+            {{/and}}
+            {{> components/products/bulk-discount-rates}}
+        </div>
+    </div>
+</article>

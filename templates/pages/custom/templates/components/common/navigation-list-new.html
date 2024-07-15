@@ -1,0 +1,56 @@
+{{#if children}}
+<li class="dropdown2">
+    <div>
+        <span>{{name}}</span>
+        <span class="material-symbols-outlined">
+            chevron_right                
+        </span>
+    </div>
+
+    <ul class="menu" id="menu_{{id}}" parent="{{id}}">
+        <li class="sub-dropdown">
+            <ul class="sub-menu sub-menu-not-children" id="menuNotChildren_{{id}}">
+
+            </ul>
+        </li>
+        {{#each children}}
+            {{#if children}}
+            <li class="sub-dropdown">
+                <div class="">
+                    <a href="{{url}}">{{name}}</a>
+                    {{#if children}}
+                    <span class="material-symbols-outlined">
+                        chevron_right
+                    </span>
+                    {{/if}}
+                </div>
+                <ul class="sub-menu" id="submenu_{{id}}">
+                    <li class="linkMenuMovile" id="menu_{{id}}">
+                        <a class="" href="{{url}}">{{name}}</a>
+                    </li>
+                    {{#if children}}
+                        {{#each children}}
+                            <li class=" childrenChildren" id="menu_{{id}}">
+                                <a class="" href="{{url}}">{{name}}</a>
+                            </li>
+                        {{/each}}
+                    {{/if}}
+                </ul>
+            </li>
+            {{else}}
+            <li style="" class="notChildren" id="menu_{{id}}">
+                <a href="{{url}}">{{name}}</a>
+            </li>
+            {{/if}}
+        {{/each}}
+    </ul>
+</li>
+{{else}}
+<li class="dropdown2 notChildren2">
+    <div style="display: block; clear: both;">
+        <a class="navPages-action{{#if is_active}} activePage{{/if}}" href="{{url}}" aria-label="{{name}}">
+             {{name}}
+         </a>
+    </div>
+</li>
+{{/if}}

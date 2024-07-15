@@ -1,0 +1,98 @@
+
+    
+  <div class="container">
+    {{#or product.description product.videos.list.length}}
+        
+           
+                <h3>Product Details</h3>
+                <hr>
+            
+            
+                <div {{#if schema}} itemprop="description"{{/if}}>
+                    {{{product.description}}}
+                    {{{snippet 'product_description'}}}
+                </div>
+                {{#if product.videos.list.length}}
+                    {{> components/products/videos product.videos}}
+                {{/if}}           
+                
+                {{#each product.custom_fields}}
+                <center>
+                <div class="container">
+                    
+                    {{#if name '==' "Call out one" }}
+                    <img src="{{value}}" class="top-short">
+                    {{/if}}
+                    {{#if name '==' "Call out two" }}
+                    <img src="{{value}}" class="bottom-short">
+                    {{/if}} 
+                    
+          
+                    {{#if name '==' "Video" }}
+                    <iframe class="iPad" width="682" height="600" src="{{value}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <br>
+                    {{/if}}  
+                    {{#if name '==' "Video (360)" }}
+                    <iframe class="iPad" width="682" height="600" src="{{value}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    {{/if}}
+                    {{#if name '==' "Video" }}
+                    <iframe class="laptoponly" width="1180" height="700" src="{{value}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <br>
+                    {{/if}}  
+                    {{#if name '==' "Video (360)" }}
+                    <iframe class="laptoponly" width="1180" height="700" src="{{value}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    {{/if}}
+                    {{#if name '==' "Video" }}
+                    <iframe class="iPhone" width="350" height="300" src="{{value}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <br>
+                    {{/if}}  
+                    {{#if name '==' "Video (360)" }}
+                    <iframe class="iPhone" width="350" height="300" src="{{value}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    {{/if}}
+                </center>
+                </div>
+                {{/each}}
+    
+           
+        
+    {{/or}}
+</div>  
+
+    <div class="container">
+    {{#and product.similar_by_views theme_settings.customer_viewed_products_tab}}
+       
+           
+                <h3>Customers also bought</h3>
+                <hr>
+            
+            
+                <div class="grid-bg">
+                    <div class="container">
+                        {{> components/products/similar-by-views products=product.similar_by_views columns=6}}
+                    </div>
+                </div>
+           
+       
+    {{/and}}
+    </div>
+    <div class="container">
+     <h3>
+                       Product Reviews
+                    </h3>
+                    <hr>
+                    <!--<div class="yotpo-widget-instance" data-yotpo-instance-id="497291" data-yotpo-product-id="{{ product.id }}" data-yotpo-name="{{ product.title }}" data-yotpo-url="{{ product.url }}" data-yotpo-image-url="{{ getImage product.main_image }}" data-yotpo-price="{{ product.price.without_tax.value }}" data-yotpo-currency="{{ currency_selector.active_currency_code }}" data-yotpo-description="{{ product.description }}"></div>-->
+    <div class="yotpo yotpo-main-widget" 
+    data-product-id="{{ product.id }}"
+    data-price="{{ product.price.without_tax.value }}"
+    data-currency="{{ currency_selector.active_currency_code }}" 
+    data-name="{{ product.title }}" 
+    data-url="{{ product.url }}" 
+    data-image-url="{{getImage product.main_image}}" 
+    data-description="{{ product.description }}"> 
+    </div> 
+    </div>
+    
+<div class="container">
+    <div id="viewQNA"></div>
+    <div id="answer" class="yotpo-widget-instance" data-yotpo-instance-id="560782" data-yotpo-product-id="{{ product.id }}" data-yotpo-name="{{ product.title }}" data-yotpo-url="{{ product.url }}" data-yotpo-image-url="{{ getImage product.main_image }}" data-yotpo-description="{{ product.description }}"></div>
+</div>

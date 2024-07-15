@@ -1,0 +1,3 @@
+{
+  "_papathemes-custom.scss": "html .productView-alsoBought-heading {\r\n    text-transform: none;\r\n}\r\n\r\n.productView-alsoBought-buttons .button {\r\n    display: inline-block;\r\n}\r\n\r\n.productView-options input[type=\"radio\"] {\r\n    display: inline-block;\r\n}"
+}

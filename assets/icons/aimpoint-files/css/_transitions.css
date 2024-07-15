@@ -1,0 +1,12 @@
+:root {
+  --transition-duration: 300ms;
+
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --fast-in-slow-out-1: cubic-bezier(0.065, 0.595, 0.030, 0.850);
+  --slow-in-fast-out-1: cubic-bezier(.27,.05,.63,.13);
+
+  --transition: var(--transition-duration) var(--ease-out);
+}

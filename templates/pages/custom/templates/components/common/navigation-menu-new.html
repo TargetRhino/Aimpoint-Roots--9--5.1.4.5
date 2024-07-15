@@ -1,0 +1,26 @@
+
+    <div class="container" id="navbar_header">
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+            <div class="menu-container">
+                <ul class="mega-menu">
+                    {{#each categories}}
+                            {{> pages/custom/templates/components/common/navigation-list-new}}
+                    {{/each}}
+                    {{#if theme_settings.show_content_navigation}}
+                        {{#each pages}}
+                            {{#if ../theme_settings.navigation_design '===' 'simple'}}
+                                {{> components/common/navigation-list-alternate}}
+                            {{/if}}
+                            {{#if ../theme_settings.navigation_design '===' 'mega'}}
+                            
+                                {{> pages/custom/templates/components/common/navigation-list-new}}
+                            {{/if}}
+                        {{/each}}
+                    {{/if}}
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+<script async src="{{cdn 'assets/js/menu.js'}}"></script>
